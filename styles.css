@@ -55,6 +55,11 @@ label {
   font-weight: lighter;
 }
 
+.text-units-small {
+  font-weight: lighter;
+  font-size: large;
+}
+
 /*containers*/
 
 .container {
@@ -78,6 +83,10 @@ label {
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+
+.gradient-label {
+  display: inline;
 }
 
 /*inputs*/
@@ -169,6 +178,10 @@ input.level {
   label {
     font-size: 1.4rem;
   }
+
+  .text-units-small {
+    font-size: medium;
+  }
 }
 
 @media (max-width: 600px) {
@@ -188,7 +201,7 @@ input.level {
   input.percentage,
   input.distance,
   input.level {
-    font-size: medium;
+    font-size: large;
     margin-left: 0.2rem;
   }
 }
@@ -212,5 +225,9 @@ input.level {
 
   label {
     font-size: 1.1rem;
+  }
+
+  .text-units-small {
+    font-size: small;
   }
 }

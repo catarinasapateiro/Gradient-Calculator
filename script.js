@@ -7,7 +7,6 @@ const resetButton = document.querySelector("button");
 
 let updating = false;
 
-// Moved resetButton event listener outside of input handler
 resetButton.addEventListener("click", function (e) {
   distInput.value = "";
   levelInput.value = "";
@@ -60,21 +59,21 @@ form.addEventListener("input", function (e) {
       } else if (!isNaN(fraction) && fraction !== 0) {
         if (!isNaN(dist) && dist !== 0) {
           level = dist / fraction;
-          levelInput.value = level.toFixed(0);
+          levelInput.value = level.toFixed(2);
           updateGradientFields(dist, level);
         } else if (!isNaN(level) && level !== 0) {
           dist = fraction * level;
-          distInput.value = dist.toFixed(0);
+          distInput.value = dist.toFixed(2);
           updateGradientFields(dist, level);
         }
       } else if (!isNaN(percentage) && percentage !== 0) {
         if (!isNaN(dist) && dist !== 0) {
           level = (percentage / 100) * dist;
-          levelInput.value = level.toFixed(0);
+          levelInput.value = level.toFixed(2);
           updateGradientFields(dist, level);
         } else if (!isNaN(level) && level !== 0) {
           dist = (level * 100) / percentage;
-          distInput.value = dist.toFixed(0);
+          distInput.value = dist.toFixed(2);
           updateGradientFields(dist, level);
         }
       }
@@ -92,5 +91,7 @@ function updateGradientFields(dist, level) {
   const fractionVal = dist / level;
 
   percentageInput.value = `${percentageVal.toFixed(2)}%`;
-  fractionInput.value = `1:${Math.round(fractionVal)}`;
+  fractionInput.value = `1:${fractionVal.toFixed(2)}`;
 }
+
+// Number.isInteger()
