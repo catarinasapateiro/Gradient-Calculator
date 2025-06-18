@@ -20,17 +20,6 @@ form.addEventListener("input", function (e) {
 
   const target = e.target;
 
-  // Clear derived fields when independent fields are cleared
-  if (target === distInput && distInput.value === "") {
-    fractionInput.value = "";
-    percentageInput.value = "";
-  }
-  if (target === levelInput && levelInput.value === "") {
-    fractionInput.value = "";
-    percentageInput.value = "";
-  }
-
-  // Parse values and handle empty inputs
   let dist = distInput.value ? parseFloat(distInput.value) : 0;
   let level = levelInput.value ? parseFloat(levelInput.value) : 0;
   let fraction = fractionInput.value
@@ -41,40 +30,44 @@ form.addEventListener("input", function (e) {
     : 0;
 
   try {
-    if (
-      [distInput, levelInput, fractionInput, percentageInput].includes(target)
-    ) {
-      if (target === distInput && distInput.value === "") {
-        fractionInput.value = "";
-        percentageInput.value = "";
-      }
-      if (target === levelInput && levelInput.value === "") {
-        fractionInput.value = "";
-        percentageInput.value = "";
-      }
-
-      // Recalculate based on valid inputs
+    if (target === distInput || target === levelInput) {
       if (!isNaN(dist) && !isNaN(level) && dist !== 0 && level !== 0) {
-        updateGradientFields(dist, level);
-      } else if (!isNaN(fraction) && fraction !== 0) {
+        if (target !== fractionInput) {
+          fractionInput.value = `1:${(dist / level).toFixed(2)}`;
+        }
+        if (target !== percentageInput) {
+          percentageInput.value = `${((level / dist) * 100).toFixed(2)}%`;
+        }
+      } else {
+        if (target !== fractionInput) fractionInput.value = "";
+        if (target !== percentageInput) percentageInput.value = "";
+      }
+    } else if (target === fractionInput) {
+      if (!isNaN(fraction) && fraction !== 0) {
         if (!isNaN(dist) && dist !== 0) {
           level = dist / fraction;
-          levelInput.value = level.toFixed(2);
-          updateGradientFields(dist, level);
+          if (target !== levelInput) levelInput.value = level.toFixed(2);
         } else if (!isNaN(level) && level !== 0) {
           dist = fraction * level;
-          distInput.value = dist.toFixed(2);
-          updateGradientFields(dist, level);
+          if (target !== distInput) distInput.value = dist.toFixed(2);
         }
-      } else if (!isNaN(percentage) && percentage !== 0) {
+        if (dist !== 0 && level !== 0) {
+          if (target !== percentageInput)
+            percentageInput.value = `${((level / dist) * 100).toFixed(2)}%`;
+        }
+      }
+    } else if (target === percentageInput) {
+      if (!isNaN(percentage) && percentage !== 0) {
         if (!isNaN(dist) && dist !== 0) {
           level = (percentage / 100) * dist;
-          levelInput.value = level.toFixed(2);
-          updateGradientFields(dist, level);
+          if (target !== levelInput) levelInput.value = level.toFixed(2);
         } else if (!isNaN(level) && level !== 0) {
           dist = (level * 100) / percentage;
-          distInput.value = dist.toFixed(2);
-          updateGradientFields(dist, level);
+          if (target !== distInput) distInput.value = dist.toFixed(2);
+        }
+        if (dist !== 0 && level !== 0) {
+          if (target !== fractionInput)
+            fractionInput.value = `1:${(dist / level).toFixed(2)}`;
         }
       }
     }
@@ -85,7 +78,6 @@ form.addEventListener("input", function (e) {
   }
 });
 
-// Helper function to update derived fields
 function updateGradientFields(dist, level) {
   const percentageVal = (level / dist) * 100;
   const fractionVal = dist / level;
@@ -93,5 +85,3 @@ function updateGradientFields(dist, level) {
   percentageInput.value = `${percentageVal.toFixed(2)}%`;
   fractionInput.value = `1:${fractionVal.toFixed(2)}`;
 }
-
-// Number.isInteger()

@@ -12,6 +12,8 @@
 }
 
 body {
+  min-width: 320px;
+  min-height: 400px;
   height: 100vh;
   background-image: linear-gradient(
     var(--green-dark),
