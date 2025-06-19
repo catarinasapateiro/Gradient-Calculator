@@ -57,15 +57,10 @@ This tool helps validate that quickly and intuitively.
 2. Ensure all linked files (`styles.css`, `script.js`, `darkmode.js`) are in the same directory.
 3. Open `index.html` in your browser.
 
-
 git clone https://github.com/catarinasapateiro/gradient-calculator.git
 cd gradient-calculator
 open index.html.
 
-
 ## 👨‍💻 Author
+
 Developed by Catarina Sapateiro
-
-
-
-
