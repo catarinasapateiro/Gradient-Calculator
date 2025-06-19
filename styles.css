@@ -1,6 +1,24 @@
 :root {
+  --green-dark: #ffffff;
+  --green-dark-gradient: #ffffff;
+  --green-medium: #e3e3e3;
+  --green-medium-title: rgb(25, 114, 120);
+  --green-gradient: #e3e3e3;
+  --green-light: #619b8a;
+  --text-dark: #082b2e;
+  --input-bg: rgba(255, 255, 255, 0.7);
+  --input-focus-bg: #c9dcdd;
+  --text-shadow: none;
+  --box-shadow: 8px 8px 2px 2px rgb(159, 158, 158, 0.7);
+  --button-shadow: 1px 1px 1px 1px rgb(8, 43, 46, 0.4);
+  --colour-button: rgb(25, 114, 120, 0.6);
+}
+
+.darkmode {
   --green-dark: #183532;
+  --green-dark-gradient: #2b575b;
   --green-medium: #197278;
+  --green-medium-title: #197278;
   --green-gradient: #265e63;
   --green-light: #619b8a;
   --text-dark: #082b2e;
@@ -9,6 +27,7 @@
   --text-shadow: 1px 1px 2px var(--text-dark);
   --box-shadow: 10px 10px 3px 3px var(--text-dark);
   --button-shadow: 1px 1px 1px 1px rgb(8, 43, 46, 0.4);
+  --colour-button: #197278;
 }
 
 body {
@@ -18,7 +37,7 @@ body {
   background-image: linear-gradient(
     var(--green-dark),
     var(--green-dark),
-    #2b575b
+    var(--green-dark-gradient)
   );
   display: flex;
   flex-direction: column;
@@ -33,14 +52,14 @@ body {
 
 h1 {
   margin: 0;
-  font-size: 4rem;
-  color: var(--green-medium);
+  font-size: 2.6rem;
+  color: var(--green-medium-title);
   text-shadow: var(--text-shadow);
 }
 
 h2 {
   margin: 0;
-  font-size: 3rem;
+  font-size: 2.1rem;
   justify-self: center;
   color: var(--green-light);
   text-shadow: var(--text-shadow);
@@ -62,15 +81,18 @@ label {
   font-size: large;
 }
 
+.header-text {
+  display: flex;
+  flex-direction: column;
+}
+
 /*containers*/
 
 .container {
   background-image: linear-gradient(var(--green-medium), var(--green-gradient));
-  /* width: 90vh; */
-  /* height: 50vh; */
   width: 100%;
   max-width: 600px;
-  height: 50%;
+  height: 60%;
   border-radius: 2rem;
   padding: 2rem;
   box-shadow: var(--box-shadow);
@@ -89,6 +111,12 @@ label {
 
 .gradient-label {
   display: inline;
+}
+
+.gradient-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 /*inputs*/
@@ -113,7 +141,7 @@ input:focus {
 
 input.gradient,
 input.percentage {
-  width: 38%;
+  width: 40%;
   padding-left: 5%;
   margin-left: 1.5rem;
 }
@@ -128,53 +156,185 @@ input.level {
 
 .responsive-icon {
   display: flex;
-  /* flex-direction: column; */
-  align-items: center;
+  align-items: flex-end;
   margin-bottom: 2rem;
 }
 
 .icon-mountain {
-  width: 70%;
-  max-width: 150px;
+  width: 60%;
+  max-width: 90px;
   height: auto;
-
   display: block;
-  margin: 0 1rem 0 0;
+  margin: 0 1rem 0.5rem 0;
   transition: transform 0.3s ease;
   text-shadow: 5px 5px 5px var(--text-dark);
 }
 
-/*button*/
+/*buttons*/
 
 .button {
   width: 2.4rem;
   height: 2.4rem;
-  background-color: var(--green-medium);
+  background-color: var(--colour-button);
   opacity: 0.8;
   border-radius: 0.5rem;
-  margin: 0 0 0 1.4rem;
+  margin: 1rem 0 0 1.4rem;
   border: 0.1px solid var(--input-focus-bg);
   box-shadow: var(--button-shadow);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#theme-switch {
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0;
+  border-radius: 50%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 100px;
+  right: 650px;
+}
+
+#theme-switch svg {
+  fill: #619b8a;
+}
+
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch {
+  background-color: #197278;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
 }
 
 /*media queries*/
 
-@media (max-width: 768px) {
+@media (min-width: 2560px) {
+  h1 {
+    font-size: 3.2rem;
+  }
+
+  h2 {
+    font-size: 2.6rem;
+  }
+
+  #theme-switch {
+    right: 900px;
+    width: 3.2rem;
+    height: 3.2rem;
+  }
+
+  #theme-switch svg {
+    width: 2.2rem;
+    height: 2.2rem;
+  }
+
+  .button {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  label {
+    font-size: 2rem;
+  }
+
   .container {
-    width: 90%;
+    width: 100%;
+    max-width: 800px;
+    height: 60%;
+    border-radius: 2rem;
+    padding: 3rem;
+  }
+
+  input[type="text"] {
+    height: 4rem;
+    border-radius: 1.2rem;
+    margin-top: 1.2rem;
+    font-size: x-large;
+    font-weight: lighter;
+  }
+
+  .icon-mountain {
+    width: 70%;
+    max-width: 110px;
+    height: auto;
+  }
+}
+
+@media (min-width: 1501px) and (max-width: 1700px) {
+  #theme-switch {
+    right: 300px;
+  }
+}
+
+@media (min-width: 1031px) and (max-width: 1500px) {
+  #theme-switch {
+    right: 400px;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1230px) {
+  #theme-switch {
+    right: 300px;
+  }
+}
+
+@media (max-width: 1024px) {
+  #theme-switch {
+    right: 220px;
+  }
+
+  .button {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1023px) {
+  #theme-switch {
+    right: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    min-width: 220px;
+    min-height: 400px;
+  }
+
+  #theme-switch {
+    top: 80px;
+    right: 100px;
+  }
+
+  .container {
+    width: 80%;
   }
 
   .icon-mountain {
     max-width: 100px;
-    margin: 0 1rem 0 0;
+    margin: 0 1.5rem 0.5rem 0;
   }
 
   h1 {
-    font-size: 3rem;
+    font-size: 2.4rem;
   }
 
   h2 {
-    font-size: 2.5rem;
+    font-size: 1.9rem;
   }
 
   label {
@@ -187,12 +347,20 @@ input.level {
 }
 
 @media (max-width: 600px) {
+  #theme-switch {
+    width: 1.8rem;
+    height: 1.8rem;
+    top: 20px;
+    right: 20px;
+  }
   h1 {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
+    margin: 0;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    margin: 0;
   }
 
   label {
@@ -205,18 +373,33 @@ input.level {
   input.level {
     font-size: large;
     margin-left: 0.2rem;
+    margin-top: 0.5rem;
+    height: 2rem;
+  }
+  .container {
+    height: 50%;
   }
 }
 
 @media (max-width: 425px) {
+  input.gradient,
+  input.percentage {
+    width: 39%;
+    padding-left: 7%;
+  }
   .icon-mountain {
-    max-width: 80px;
-    margin: 0 0.2rem 0 0;
+    max-width: 70px;
+    margin: 0 0.8rem 0.5rem 0;
   }
 
-  h1,
   h2 {
     text-align: center;
+    font-size: 1.6rem;
+  }
+
+  h1 {
+    text-align: center;
+    font-size: 2rem;
   }
 
   input.gradient,
