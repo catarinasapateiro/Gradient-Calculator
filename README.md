@@ -1,6 +1,6 @@
 # 🌄 Gradient Calculator
 
-The **Gradient Calculator** is a responsive web app that allows users to calculate slope/gradient using distance and level difference. It provides real-time conversion between **ratio** and **percentage** formats, commonly used in civil engineering, architecture,construction and road design.
+The **Gradient Calculator** is a responsive web app that allows users to calculate slope/gradient using distance and level difference. It provides real-time conversion between **ratio** and **percentage** formats. It is commonly used in civil engineering, architecture, construction and road design.
 
 ## 🚀 Features
 
@@ -57,10 +57,10 @@ This tool helps validate that quickly and intuitively.
 2. Ensure all linked files (`styles.css`, `script.js`, `darkmode.js`) are in the same directory.
 3. Open `index.html` in your browser.
 
-```bash
+
 git clone https://github.com/catarinasapateiro/gradient-calculator.git
 cd gradient-calculator
-open index.html
+open index.html.
 
 
 ## 👨‍💻 Author
@@ -68,4 +68,4 @@ Developed by Catarina Sapateiro
 
 
 
-```
+
