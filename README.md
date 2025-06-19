@@ -16,7 +16,7 @@ The **Gradient Calculator** is a responsive web app that allows users to calcula
 
 ### Light Mode
 
-> _Optional: Add a screenshot or GIF of the app UI here_ > ![Gradient Calculator Screenshot](./screenshots/app_for_mobile.png)
+![Gradient Calculator Screenshot](./screenshots/app_for_mobile.png)
 
 ### Dark Mode
 
@@ -58,13 +58,14 @@ This tool helps validate that quickly and intuitively.
 3. Open `index.html` in your browser.
 
 ```bash
-git clone https://github.com/yourusername/gradient-calculator.git
+git clone https://github.com/catarinasapateiro/gradient-calculator.git
 cd gradient-calculator
 open index.html
 
 
 ## 👨‍💻 Author
 Developed by Catarina Sapateiro
+
 
 
 ```
