@@ -7,7 +7,7 @@
   --green-light: #619b8a;
   --text-dark: #082b2e;
   --input-bg: rgba(255, 255, 255, 0.7);
-  --input-focus-bg: #c9dcdd;
+  --input-focus-bg: #e8ecec;
   --text-shadow: none;
   --box-shadow: 8px 8px 2px 2px rgb(159, 158, 158, 0.7);
   --button-shadow: 1px 1px 1px 1px rgb(8, 43, 46, 0.4);
@@ -197,7 +197,7 @@ input.level {
   align-items: center;
   position: fixed;
   top: 100px;
-  right: 650px;
+  /* right: 900px; */
 }
 
 #theme-switch svg {
@@ -223,34 +223,31 @@ input.level {
 /*media queries*/
 
 @media (min-width: 2560px) {
+  .text-units-small {
+    font-size: large;
+  }
   h1 {
     font-size: 3.2rem;
   }
-
   h2 {
     font-size: 2.6rem;
   }
-
   #theme-switch {
     right: 900px;
     width: 3.2rem;
     height: 3.2rem;
   }
-
   #theme-switch svg {
     width: 2.2rem;
     height: 2.2rem;
   }
-
   .button {
     width: 4rem;
     height: 4rem;
   }
-
   label {
     font-size: 2rem;
   }
-
   .container {
     width: 100%;
     max-width: 800px;
@@ -258,7 +255,6 @@ input.level {
     border-radius: 2rem;
     padding: 3rem;
   }
-
   input[type="text"] {
     height: 4rem;
     border-radius: 1.2rem;
@@ -266,17 +262,25 @@ input.level {
     font-size: x-large;
     font-weight: lighter;
   }
-
   .icon-mountain {
     width: 70%;
     max-width: 110px;
     height: auto;
   }
+  .text-units-small {
+    font-size: 1.2rem;
+  }
 }
 
-@media (min-width: 1501px) and (max-width: 1700px) {
+@media (min-width: 1630px) and (max-width: 2559px) {
   #theme-switch {
-    right: 300px;
+    right: 600px;
+  }
+}
+
+@media (min-width: 1501px) and (max-width: 1629px) {
+  #theme-switch {
+    right: 500px;
   }
 }
 
@@ -314,16 +318,13 @@ input.level {
     min-width: 220px;
     min-height: 400px;
   }
-
   #theme-switch {
     top: 80px;
     right: 100px;
   }
-
   .container {
     width: 80%;
   }
-
   .icon-mountain {
     max-width: 100px;
     margin: 0 1.5rem 0.5rem 0;
@@ -332,15 +333,12 @@ input.level {
   h1 {
     font-size: 2.4rem;
   }
-
   h2 {
     font-size: 1.9rem;
   }
-
   label {
     font-size: 1.4rem;
   }
-
   .text-units-small {
     font-size: medium;
   }
@@ -357,14 +355,13 @@ input.level {
     font-size: 2.2rem;
     margin: 0;
   }
-
   h2 {
     font-size: 1.8rem;
     margin: 0;
   }
-
   label {
     font-size: 1.2rem;
+    margin-left: 0.5rem;
   }
 
   input.gradient,
@@ -375,6 +372,7 @@ input.level {
     margin-left: 0.2rem;
     margin-top: 0.5rem;
     height: 2rem;
+    margin-bottom: 0.2rem;
   }
   .container {
     height: 50%;
@@ -391,17 +389,14 @@ input.level {
     max-width: 70px;
     margin: 0 0.8rem 0.5rem 0;
   }
-
   h2 {
     text-align: center;
     font-size: 1.6rem;
   }
-
   h1 {
     text-align: center;
     font-size: 2rem;
   }
-
   input.gradient,
   input.percentage {
     display: inline-block;
@@ -411,7 +406,6 @@ input.level {
   label {
     font-size: 1.1rem;
   }
-
   .text-units-small {
     font-size: small;
   }
