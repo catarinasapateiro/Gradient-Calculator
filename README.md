@@ -16,11 +16,11 @@ The **Gradient Calculator** is a responsive web app that allows users to calcula
 
 ### Light Mode
 
-![Gradient Calculator Screenshot](./screenshots/app_for_mobile.png)
+![Gradient Calculator App](./screenshots/app_for_mobile.png)
 
 ### Dark Mode
 
-![Gradient Calculator Screenshot](./screenshots/app_for_mobile_darkmode.png)
+![App in dark mode](./screenshots/app_for_mobile_darkmode.png)
 
 ## 🛠️ Technologies Used
 
