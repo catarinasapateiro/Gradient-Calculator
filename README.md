@@ -14,7 +14,7 @@ The **Gradient Calculator** is a responsive web app that allows users to calcula
 
 ## 📸 Preview
 
-<div style="display: flex; gap: 50px; justify-content: center; align-items:center;"> <img src="./screenshots/app_for_mobile.png" alt="Gradient Calculator App - Light Mode" width="45%"> <img src="./screenshots/app_for_mobile_darkmode.png" alt="App in Dark Mode" width="45%"> </div>
+<div style="display: flex; margin-left:25px ; justify-content: center; align-items:center;"> <img src="./screenshots/app_for_mobile.png" alt="Gradient Calculator App - Light Mode" width="45%"> <img src="./screenshots/app_for_mobile_darkmode.png" alt="App in Dark Mode" width="45%"> </div>
 
 ## 🛠️ Technologies Used
 
