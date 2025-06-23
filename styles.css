@@ -196,8 +196,9 @@ input.level {
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 100px;
-  /* right: 900px; */
+  top: 8vh;
+  right: 32vw;
+  z-index: 1000;
 }
 
 #theme-switch svg {
@@ -233,7 +234,6 @@ input.level {
     font-size: 2.6rem;
   }
   #theme-switch {
-    right: 900px;
     width: 3.2rem;
     height: 3.2rem;
   }
@@ -272,44 +272,10 @@ input.level {
   }
 }
 
-@media (min-width: 1630px) and (max-width: 2559px) {
-  #theme-switch {
-    right: 600px;
-  }
-}
-
-@media (min-width: 1501px) and (max-width: 1629px) {
-  #theme-switch {
-    right: 500px;
-  }
-}
-
-@media (min-width: 1031px) and (max-width: 1500px) {
-  #theme-switch {
-    right: 400px;
-  }
-}
-
-@media (min-width: 1025px) and (max-width: 1230px) {
-  #theme-switch {
-    right: 300px;
-  }
-}
-
 @media (max-width: 1024px) {
   #theme-switch {
-    right: 220px;
-  }
-
-  .button {
-    width: 2rem;
-    height: 2rem;
-  }
-}
-
-@media (min-width: 769px) and (max-width: 1023px) {
-  #theme-switch {
-    right: 180px;
+    top: 8vh;
+    right: 22vw;
   }
 }
 
@@ -318,10 +284,7 @@ input.level {
     min-width: 220px;
     min-height: 400px;
   }
-  #theme-switch {
-    top: 80px;
-    right: 100px;
-  }
+
   .container {
     width: 80%;
   }
@@ -342,14 +305,18 @@ input.level {
   .text-units-small {
     font-size: medium;
   }
+  #theme-switch {
+    top: 1vh;
+    right: 1vw;
+  }
 }
 
 @media (max-width: 600px) {
   #theme-switch {
     width: 1.8rem;
     height: 1.8rem;
-    top: 20px;
-    right: 20px;
+    top: 1vh;
+    right: 1vw;
   }
   h1 {
     font-size: 2.2rem;
