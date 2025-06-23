@@ -24,11 +24,14 @@ The **Gradient Calculator** is a responsive web app that allows users to calcula
 
 ## 📁 File Structure
 
+```text
+project-root/
 ├── index.html # Main HTML file
 ├── styles.css # Custom styling
 ├── script.js # Calculation logic and interactivity
 ├── darkmode.js # Theme toggling functionality
 ├── README.md # You're reading it!
+```
 
 ## 📐 How It Works
 
